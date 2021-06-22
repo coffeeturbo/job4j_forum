@@ -1,23 +1,17 @@
 package forum.service;
 
 import forum.model.User;
+import forum.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class UserService {
 
-    AtomicInteger it = new AtomicInteger();
+    private final UserRepository repository;
 
-    private final List<User> users = new ArrayList<>();
-
-    public UserService() {
-        users.add(User.builder()
-                .id(it.incrementAndGet()).username("user").password("1234")
-                .build());
+    public UserService(UserRepository repository) {
+        this.repository = repository;
     }
 
     public User add(User user) throws Exception {
@@ -27,20 +21,12 @@ public class UserService {
             throw new Exception("user with this name already exists");
         }
 
-        user.setId(it.incrementAndGet());
-        users.add(user);
+        repository.save(user);
 
         return user;
     }
 
     public User findByUsername(String userName) {
-
-        for (User user : users) {
-            if (user.getUsername().equals(userName)) {
-                return user;
-            }
-        }
-
-        return null;
+        return repository.findByUsername(userName);
     }
 }

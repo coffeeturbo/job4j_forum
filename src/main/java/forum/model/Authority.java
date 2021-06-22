@@ -12,16 +12,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder(toBuilder = true)
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "authorities")
+public class Authority {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String authority;
 
-    private String password;
-    private String username;
-    private boolean enabled;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Authority authority;
 }

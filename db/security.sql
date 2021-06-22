@@ -19,5 +19,6 @@ insert into authorities (authority)
 values ('ROLE_ADMIN');
 
 insert into users (username, enabled, password, authority_id)
+-- root password = 123
 values ('root', true, '$2a$10$3k8bnsScosCtG591rmSubeZwn3HOZwmN9O2nrYJFOD6Vh5Mo2I/AG',
         (select id from authorities where authority = 'ROLE_ADMIN'));
