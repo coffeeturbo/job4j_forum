@@ -13,14 +13,14 @@ public class RegController {
 
     private final UserService users;
 
-    @GetMapping({"/reg"})
-    public String reg(Model model) {
-
-        return "auth/reg";
-    }
 
     public RegController(UserService users) {
         this.users = users;
+    }
+
+    @GetMapping({"/reg"})
+    public String reg(Model model) {
+        return "auth/reg";
     }
 
     @PostMapping("/reg")
