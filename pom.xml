@@ -23,6 +23,8 @@
         <junit.platform.version>1.5.2</junit.platform.version>
     </properties>
 
+    <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -122,6 +124,14 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
