@@ -3,7 +3,7 @@
 # Simple forum Web application
 
 ![JAVA >= 14](https://img.shields.io/badge/JAVA-%3E%3D14-red)
-![MAVEN >= 14](https://img.shields.io/badge/MAVEN-%3E%3D3-green)
+![MAVEN >= 3.8.1](https://img.shields.io/badge/MAVEN-%3E%3D3-green)
 ![PostgreSQL >= 14](https://img.shields.io/badge/PostgreSQL-%3E%3D5-blue)
 ![Hibernate >= 5](https://img.shields.io/badge/Hibernate-%3E%3D5-orange)
 ![Travis CI >= 5](https://img.shields.io/badge/Travis-CI-blue)
