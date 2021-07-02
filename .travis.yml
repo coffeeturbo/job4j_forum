@@ -1,4 +1,3 @@
-# используем язык java. Travis CI поддерживает другие языки тоже.
 language: java
 jdk:
   - openjdk14
@@ -26,4 +25,9 @@ services:
   - postgresql
 
 before_install:
-  - psql -c 'create database job4j_forum;' -U postgres
+- psql -c 'create database job4j_forum;' -U postgres
+deploy:
+  provider: heroku
+  app: powerful-ocean-77296
+  api_key:
+    secure: pFXIKTM3vb/iP+bihc/QQp8sFuAa0aIDUiQhZu9A11KmbUyb1DFHLimdmsSPZ5vQGKxWhfvRL/zVNoo5rDvA9eJy/Uox/U2nsAYq8uxzlOtwKLICgzZWIARgU93jz048RrzwNSozQFlZx3iOHrB3BDbbObKmGSYBIRaMMAWGCtXCr9uRSxu/gHCQAdY24CMU2b2oho5I7Q/a2tYeSlzT0vT5L3bP/Y2+T32WFZ4rqRtVVDbWDN1fvr7TwUf9Us+YekXAmNq/419UC93fnFRKg8IM5n7tIj6hrHqP7q6ncvm8sCn1XMrpdRl7ACGj1f8QAqCSiib4+Ux9p7JbR4CXDU3Cdh8vFVi7Y7ZdRi1Gpu65GbhKOEzpDT6KQBqo6VYmE6+lQhs3l1EqFNPOJVY/6holJ1fmXGZm9NRE6B2wlgnod5pe6ZRZAyNrfMjK48FdxhzbRB3JrrotRBiZCcHY30SiftDadPoRwQOXYv12zPPirs4snJozZPj3Mzqv5e92NfViKNXKtLn2ldLLVhz6AFi+yLzbRDNRMB+yIuqYFy7iPmHjyt7kY8a5s7RUwn3l+7X+96rkbQcvLgy1ftMKv9YtOAdHkpi/g7pIm9JpFPCmXc4Ox29jAQqbCrJWzJpw4ANaL/sbN0EsAuFi+aKcuHXM1+sDqKzWwc5YudcnEDM=
