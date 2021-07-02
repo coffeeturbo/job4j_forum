@@ -5,6 +5,9 @@ jdk:
 # используем режим обычного пользователя для сборки проекта.
 sudo: false
 
+install: true
+script: mvn clean package -DskipTests=true
+
 env:
   global:
     - CODECOV_TOKEN=${{CODECOV_TOKEN}}
